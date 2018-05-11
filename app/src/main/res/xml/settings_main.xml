@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/settings_order_by_key"
+        android:title="@string/settings_order_by_most_recent_label"
+
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/default_date"
+        android:inputType="date"
+        android:key="@string/date_from_key"
+        android:title="@string/date_from_label"
+        android:selectAllOnFocus="true"
+        />
+
+    <ListPreference
+        android:key="@string/topic_key"
+        android:title="@string/topic_label"
+        android:entries="@array/select_topic_labels"
+        android:entryValues="@array/select_topic_values"
+        android:defaultValue="@string/topic_default"
+        />
+
+</PreferenceScreen>
