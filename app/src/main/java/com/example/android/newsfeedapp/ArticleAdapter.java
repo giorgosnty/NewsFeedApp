@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,8 @@ import java.util.ArrayList;
  */
 
 public class ArticleAdapter extends ArrayAdapter<Article> {
+
+    private static final String LOG_TAG = ArticleAdapter.class.getSimpleName();
 
     public ArticleAdapter(Context context, ArrayList<Article> objects) {
         super(context, 0, objects);
@@ -43,22 +48,6 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         int c = 0;
 
 
-//        if(currentTitle.length() > 60) {
-//
-//            String[] splitted = currentTitle.split(" ");
-//
-//
-//            while (c<60)
-//            {
-//                c += splitted[i].length();
-//                i++;
-//                str = (String) str + splitted[i];
-//
-//            }
-//
-//            currentTitle = str;
-//        }
-
         TextView titleTextview = (TextView) listItemView.findViewById(R.id.title);
         titleTextview.setText(currentTitle);
 
@@ -85,9 +74,22 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         //update
         dateTextview.setText(currentDate);
 
+        //Fill the ImageView with the image resource fetched
+
+        String currentImageSrc = currentArticle.getThumbnail();
+
+        ImageView thumbnailImageView = listItemView.findViewById(R.id.thumbnail);
+
+
+        Picasso.with(getContext()).load(currentImageSrc).placeholder(R.drawable.news_app_launcher)
+                .error(R.drawable.news_app_launcher)
+                .fit()
+                .into(thumbnailImageView);
+
 
         return listItemView;
     }
+
 
 
 }

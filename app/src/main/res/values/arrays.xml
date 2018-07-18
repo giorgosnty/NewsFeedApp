@@ -4,11 +4,25 @@
         <item>@string/sport_label</item>
         <item>@string/politics_label</item>
         <item>@string/technology_label</item>
+        <item>@string/film_label</item>
+        <item>@string/art_design_label</item>
     </string-array>
 
     <string-array name="select_topic_values">
         <item>@string/sport_value</item>
         <item>@string/politics_value</item>
         <item>@string/technology_value</item>
+        <item>@string/film_value</item>
+        <item>@string/art_design_value</item>
+    </string-array>
+
+    <string-array name="order_by_labels">
+        <item>@string/settings_order_by_most_recent_label</item>
+        <item>@string/order_by_relevance_label</item>
+    </string-array>
+
+    <string-array name="order_by_value">
+        <item>@string/settings_order_by_most_recent_value</item>
+        <item>@string/order_by_relevance_value</item>
     </string-array>
 </resources>

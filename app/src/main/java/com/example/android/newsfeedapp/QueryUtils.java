@@ -147,9 +147,10 @@ public final class QueryUtils {
                 JSONObject currentArticle = articleArray.getJSONObject(i);
 
 
-                String section = currentArticle.getString("pillarName");
+                //if there is not a pillarname or webtitle, optString will return " "  and the app will continue
+                String section = currentArticle.optString("pillarName");
 
-                String title = currentArticle.getString("webTitle");
+                String title = currentArticle.optString("webTitle");
 
                 String date;
 
@@ -172,8 +173,21 @@ public final class QueryUtils {
                     author = "Unknown Author";
                 }
 
+                JSONObject fields = currentArticle.getJSONObject("fields");
 
-                Article a = new Article(title, author, date, section, url);
+
+                String thumbnail  ;
+
+                try {
+                    thumbnail = fields.getString("thumbnail");
+                } catch (JSONException js) {
+                    Log.e(LOG_TAG, "Thumbnail not found", js);
+                    thumbnail = Integer.toString(R.drawable.news_app_launcher);
+                }
+
+
+
+                Article a = new Article(title, author, date, section, url,thumbnail);
 
                 articles.add(a);
 

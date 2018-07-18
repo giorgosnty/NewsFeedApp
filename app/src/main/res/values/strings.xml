@@ -1,23 +1,23 @@
 <resources>
     <string name="app_name">News Feed App</string>
     <string name="empty">We are terribly sorry. No news found!</string>
-    <string name="key">282a9924-3109-4e6d-80b8-4718b6b331da</string>
     <string name="network">Error! Problem with network! Please check your connection.</string>
 
     <string name="settings_title">Article Settings</string>
     <string name="settings_menu_item">Settings</string>
 
 
-    <string name="settings_order_by_key" translatable="false">order_by</string>
-
-    <string name="settings_order_by_most_recent_label">Order By Most Recent</string>
-    <string name="settings_order_by_most_recent_value" translatable="false">time</string>
+    <string name="settings_order_by_key" translatable="false">order-by</string>
+    <string name="settings_order_by_label">Order By</string>
     <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_value</string>
 
+    <string name="settings_order_by_most_recent_label">Order By Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">newest</string>
 
-    <string name="default_date">2014-02-18</string>
-    <string name="date_from_label">Date From</string>
-    <string name="date_from_key" translatable ="false">date from</string>
+
+    <string name="order_by_relevance_label">Order By Relevance</string>
+    <string name="order_by_relevance_value" translatable="false">relevance</string>
+
 
     <string name="topic_label">Select Topic </string>
     <string name="topic_key" translatable="false">order_by_tag</string>
@@ -31,6 +31,12 @@
 
     <string name="politics_label">Politics</string>
     <string name="politics_value" translatable="false">politics</string>
+
+    <string name="art_design_label">Art And Design</string>
+    <string name="art_design_value">artanddesign</string>
+
+    <string name="film_label">Films</string>
+    <string name="film_value">film</string>
 
 
 </resources>
